@@ -10,11 +10,21 @@ public class FlamingNinjaStar {
 		int flameSize = 130;		//the length of the flaming arms
 		
 		// Make a new robot, and set it's pen down.
-
+		Robot jeff = new Robot();
+		jeff.penDown();
+		jeff.setSpeed(100);
 		// Set the robot speed to 100
-		
+		jeff.setWindowSize(800,800);
 		// Set the robot window size to 800 x 800
-
+		for(int i=0; i<1; i++); {
+			jeff.turn(360/8);
+			jeff.move(64);
+			jeff.turn(-40);
+			jeff.move(flameSize);
+			jeff.turn(170);
+			jeff.move(flameSize);
+			
+		}
 		// Use a for loop to repeat all of the code below ONE time (we will change this later)
 
 			   // TURN RIGHT     Turn the robot 1/8 of a circle (hint: 360 degrees will turn a full circle)
