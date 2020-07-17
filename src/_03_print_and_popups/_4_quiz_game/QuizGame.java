@@ -6,18 +6,118 @@ public class QuizGame {
 	public static void main(String[] args) {
 		
 		// Create a variable to hold the user's score. Set it equal to zero. 
-		int score = 0;
-		
-		String question = JOptionPane.showInputDialog("What is 3+3?");
+		JOptionPane.showMessageDialog(null,"Welcome to Abhi's Quiz Show\n Ten Questions, 5 pts. for easy, 10pts. for hard\n "
+				+ "You also lose 5 or 10 respectively for getting wrong answers\n ");
 	
-		if(question.equalsIgnoreCase("6")){
-			JOptionPane.showMessageDialog(null,"Correct!");
-		score+=10 ;
+		
+		int score = 0;
+	//questions go here	
+		String easy_question1 = JOptionPane.showInputDialog("What is 3+3?");
+		String hard_question1 = JOptionPane.showInputDialog("How many countries in the world are there?(by UN  Standards");
+		String easy_question2 = JOptionPane.showInputDialog("What is the capital of Canada?");
+		String hard_question2 = JOptionPane.showInputDialog("What city has the greatest population(in the world)?");
+		String easy_question3 = JOptionPane.showInputDialog("What event caused the starting of our galaxy?");
+		/*
+		 * (easy_question1, A1, easy_question2, A2, easy_question 3, A3)
+		 * for(int i = 0; i<list.length()-2; i+=4){
+		 * 	if list(i).equalsIgnoreCase(list(i+1)){
+		 * 		score+=5;
+		 * 	else{
+		 * 		score-=5;
+		 * }
+		 * 	if(list(i+2).equalsIgnoreCase(i+3)){
+		 *  score+=5;
+		 *  else{
+		 *  score-=5;
+		 *  }
+		 */
+		if(easy_question1.equalsIgnoreCase("6")){
+		score+=5 ;
 		}
 		else {
-			JOptionPane.showMessageDialog(null,"Sorry, that's wrong");
-		score-=1;
+			
+		score-=5;
 		}
+
+		if(hard_question1.equalsIgnoreCase("195")){
+			score+=10 ;
+			}
+			else {
+			score-=10;
+			}
+		
+		if(easy_question2.equalsIgnoreCase("Ottawa")){
+		score+=5 ;
+		}
+		else {
+		score-=5;
+		}
+		
+
+		if(hard_question2.equalsIgnoreCase("Tokyo")){
+			score+=10 ;
+			}
+			else {
+			score-=10;
+			}
+		
+		if(easy_question3.equalsIgnoreCase("Big Bang")){
+		score+=5 ;
+		}
+		else {
+		score-=5;
+		}
+		
+		JOptionPane.showMessageDialog(null,"Current Score: " + score+"pts.");
+
+		
+		String hard_question3 = JOptionPane.showInputDialog("What year did the Civil War begin?");
+		String easy_question4 = JOptionPane.showInputDialog("What is the largest State by area?");
+		String hard_question4 = JOptionPane.showInputDialog("What is the farthest a drive has ever gone?(golf in yards)");
+		String easy_question5 = JOptionPane.showInputDialog("Who is the richest person in the world?");
+		String hard_question5 = JOptionPane.showInputDialog("What is the world record 3x3 solve?(rubiks cube) in seconds");
+
+		
+		
+		
+
+		
+		if(hard_question3.equalsIgnoreCase("1861")){
+			score+=10 ;
+			}
+			else {
+			score-=10;
+			}
+		
+		if(easy_question4.equalsIgnoreCase("Alaska")){
+		score+=5 ;
+		}
+		else {
+		score-=5;
+		}
+		
+
+		if(hard_question4.equalsIgnoreCase("515")){
+			score+=10 ;
+			}
+			else {
+			score-=10;
+			}
+		
+		if(easy_question5.equalsIgnoreCase("Jeff Bezos")){
+		score+=5 ;
+		}
+		else {
+		score-=5;
+		}
+		
+		
+		if(hard_question5.equalsIgnoreCase("3.47")){
+			score+=10 ;
+			}
+			else {
+			score-=10;
+			}
 		
 		// ASK A QUESTION AND CHECK THE ANSWER
 		
@@ -32,11 +132,15 @@ public class QuizGame {
 		
 		
 		// After all the questions have been asked, tell the user their final score 
-		if(score<5) {
-			JOptionPane.showMessageDialog(null,"Your Final Score is " + score+" \n"+"Better Luck Next Time!");
+		if(score<50) {
+			JOptionPane.showMessageDialog(null,"Final Score: " + score+"pts. \n"+"Better Luck Next Time!");
 		}
 		else{
-			JOptionPane.showMessageDialog(null,"Your Final Score is " + score+" \n"+"That's Pretty good!");
+			JOptionPane.showMessageDialog(null,"Final Score: " + score+"pts. \n"+"That's Pretty good!");
 		}
+		System.out.println(score);
+		
+		
+		
 	}
 }
