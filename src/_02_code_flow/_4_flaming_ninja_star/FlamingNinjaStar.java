@@ -16,14 +16,18 @@ public class FlamingNinjaStar {
 		// Set the robot speed to 100
 		jeff.setWindowSize(800,800);
 		// Set the robot window size to 800 x 800
-		for(int i=0; i<1; i++); {
+		for(int i = 0; i<25; i++) {
 			jeff.turn(360/8);
 			jeff.move(64);
 			jeff.turn(-40);
+			jeff.setRandomPenColor();
 			jeff.move(flameSize);
 			jeff.turn(170);
 			jeff.move(flameSize);
-			
+			jeff.setPenColor(0, 0, 0);
+			jeff.turn(64);
+			jeff.move(baseSize);
+		
 		}
 		// Use a for loop to repeat all of the code below ONE time (we will change this later)
 
