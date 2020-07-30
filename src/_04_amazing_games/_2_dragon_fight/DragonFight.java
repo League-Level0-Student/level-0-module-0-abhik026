@@ -29,28 +29,31 @@ public class DragonFight {
 			// to 0 for now.
 
 		
-		//  This while statement will cause the game to repeat until the player or dragon run out of health
-		while (true) {
+	//  This while statement will cause the game to repeat until the player or dragon run out of health
+	while (true) {
 
-			// THE PLAYER ATTACKS THE DRAGON
-
-				// 3. Ask the player in a pop-up if they want to attack the dragon with a yell
-				// or a kick
+		// THE PLAYER ATTACKS THE DRAGON
+		// 3. Ask the player in a pop-up if they want to attack the dragon with a yell
+		// or a kick
+		// 4. If they typed in "yell":
 	String attack = JOptionPane.showInputDialog("Attack the dragon by \n 1) YELL or 2) KICK");
-				// 4. If they typed in "yell":
-	if (attack.equalsIgnoreCase("Yell")) {
-		playerAttack = ran.nextInt(10);
-		dragonHealth-=playerAttack;
-	}
-					// -- Find a random number between 0 and 10 and store it in playerAttack. Use
-					// ran.nextInt(10)
 		
-					// -- Subtract the player attack value from the dragon's health
-	if (attack.equalsIgnoreCase("Kick")) {
+	if (attack.equalsIgnoreCase("1")||attack.equalsIgnoreCase("yell")) {
+		playerAttack = ran.nextInt(15);
+		dragonHealth-=playerAttack;
+		
+	}
+	else if (attack.equalsIgnoreCase("Kick")|| attack.equalsIgnoreCase("2")) {
 		playerAttack = ran.nextInt(25);
 		dragonHealth-=playerAttack;
 	}
-				// 5. If they typed in "kick":
+	else {
+		
+	   JOptionPane.showMessageDialog(null,"Try Again- Please use either a number or an attack word");
+	   System.exit(0);
+	}
+	
+	// 5. If they typed in "kick":
 	
 					// -- Find a random number between 0 and 25 and store it in playerAttack.
 		
@@ -58,7 +61,7 @@ public class DragonFight {
 
 			// THE DRAGON RETALIATES
 
-	dragonAttack = ran.nextInt(35);
+	dragonAttack = ran.nextInt(25);
 				// 6. Find a random number between 0 and 35 and store it in dragonAttack
 	playerHealth-=dragonAttack;
 				// 7. Subtract the dragon attack value from the player's health
@@ -69,17 +72,31 @@ public class DragonFight {
 				// call the playerLost() method
 	
 			if(playerHealth<=0) {
+				JOptionPane.showMessageDialog(null, "The dragon killed you with a " +dragonAttack +" damage attack!");
+
 				playerLost();
 			}
 				// 9. Else if the dragon's health is less than or equal to 0
 				// call the dragonLost() method
 			if(dragonHealth<=0) {
-	dragonLost();
+				JOptionPane.showMessageDialog(null, "You slayed the dragon with a " + "attack!");
+				dragonLost();
 }
+	
+			if (playerAttack>=10) {
+			 JOptionPane.showMessageDialog(null, "Nice, you did " + playerAttack +" damage to the dragon!");
+
+			}
+			else {
+				 JOptionPane.showMessageDialog(null, "You're attack barely hit and you did only " + playerAttack +" damage to the dragon");
+	
+			}
+			
 			
 			// 10.  Pop up a message that tells the player the health levels of player and
 			// 		dragon.
-JOptionPane.showMessageDialog(null, "Player Health: "+ playerHealth+"    Dragon Health: "+ dragonHealth);
+			JOptionPane.showMessageDialog(null, "The Dragon returns with a "+dragonAttack+" attack. Current Health Stats: \n Player Health: "+ playerHealth+"    Dragon Health: "+ dragonHealth);
+
 			
 			// (Bonus: Also display the amount of health that was lost by each in this
 			// round)
@@ -90,7 +107,8 @@ JOptionPane.showMessageDialog(null, "Player Health: "+ playerHealth+"    Dragon 
 
 	static void playerLost() {
 		// 11. Tell the player that they have been defeated by the dragon and have no treasure
-JOptionPane.showMessageDialog(null, "You Lost, \n GAME END\n YOU HAVE BEEN DEFEATED BY THE DRAGON");
+
+		JOptionPane.showMessageDialog(null, "You Lost,\nGAME END\n YOU HAVE BEEN DEFEATED BY THE DRAGON");
 
 		System.exit(0);   //This code ends the program
 	}

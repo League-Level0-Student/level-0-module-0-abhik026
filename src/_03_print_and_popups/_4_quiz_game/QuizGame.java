@@ -39,7 +39,8 @@ public class QuizGame {
 		score-=5;
 		}
 
-		if(hard_question1.equalsIgnoreCase("195")){
+		int hq1 = Integer.parseInt(hard_question1);
+		if(hq1>195 && hq1<200){
 			score+=10 ;
 			}
 			else {
@@ -61,7 +62,7 @@ public class QuizGame {
 			score-=10;
 			}
 		
-		if(easy_question3.equalsIgnoreCase("Big Bang")){
+		if(easy_question3.equalsIgnoreCase("Big Bang")|| easy_question3.equalsIgnoreCase("The big bang")){
 		score+=5 ;
 		}
 		else {
@@ -96,10 +97,11 @@ public class QuizGame {
 		score-=5;
 		}
 		
+		int hq4 = Integer.parseInt(hard_question4);
 
-		if(hard_question4.equalsIgnoreCase("515")){
+		if(hq4>499 && hq4<531){
 			score+=10 ;
-			}
+		}
 			else {
 			score-=10;
 			}
@@ -111,8 +113,9 @@ public class QuizGame {
 		score-=5;
 		}
 		
+		float hq5 = Float.parseFloat(hard_question5);
 		
-		if(hard_question5.equalsIgnoreCase("3.47")){
+		if(hq5>3.1 && hq5<4.1){
 			score+=10 ;
 			}
 			else {
